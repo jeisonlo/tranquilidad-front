@@ -1,0 +1,333 @@
+/* contenido header */
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #59009A;
+  font-style: italic;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  position: absolute;
+  padding: 0;
+  background-color: #fffcfc;
+  width: 100%;
+  left: 0%;
+  height: 100vh;
+  position: relative;
+}
+
+.arriba {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  border-bottom: 0.0625rem solid #333;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-right: 0.625rem;
+}
+
+.logo h1 {
+  margin: 0;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin: 0rem;
+}
+
+.user a {
+  margin-right: 1.25rem;
+  color: #59009A;
+  text-decoration: none;
+  margin-inline-start: auto;
+}
+
+.user img {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+}
+
+.nav {
+  color: #59009A;
+  position: relative;
+  margin-left: 55rem;
+}
+
+.submenu {
+  position: absolute;
+  background-color: #fff;
+  padding: 0.3125rem 0.3125rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
+  display: none;
+  top: 1.5rem;
+  left: 0rem;
+  width: auto;
+}
+
+.nav:hover .submenu {
+  display: flex;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu li {
+  padding: 1.25rem;
+  border-bottom: 0.0625rem solid #ddd;
+}
+
+.submenu li:hover {
+  background-color: #f0f0f0;
+}
+
+/* contenido body */
+main {
+  padding: 1.25rem;
+}
+
+.hero h2 {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.servicios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.servicio {
+  width: 18.75rem;
+  height: 18.75rem;
+  text-align: center;
+  margin: 1.25rem;
+  padding: 1.25rem;
+  border: 0.0625rem solid #59009A;
+  transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+  transform: scale(1.1);
+}
+
+.servicio img {
+  width: 6.25rem;
+  margin-bottom: 0.625rem;
+}
+
+.servicio h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.625rem;
+}
+
+.servicio p {
+  font-size: 1rem;
+}
+
+.subir-nuevo {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.subir-nuevo {
+  text-align: center;
+  margin-top: 2.5rem;
+  display: block;
+  padding: 0.625rem 1.875rem;
+  background-color: #59009A;
+  color: #fff;
+  border: none;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 42.625rem;
+}
+
+.cargar-archivo {
+  width: 0.625rem;
+  height: 5.625rem;
+}
+
+.subir-nuevo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+/* contenido footer */
+footer {
+  background-color: #59009A;
+  color: #ffffff;
+  padding: 0.625rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-item span {
+  margin-bottom: 0.3125rem;
+}
+
+.iconos {
+  display: flex;
+  justify-content: center;
+}
+
+.iconos a {
+  margin: 0 0.625rem;
+}
+
+.iconos img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.quienes-somos {
+  align-self: center;
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+
+/* Responsive design for tablets */
+@media (max-width: 900px) {
+  .arriba, .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav {
+    margin-left: 0;
+  }
+
+  .logo img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .user img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .servicio {
+    width: 15rem;
+  }
+
+  .servicios {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subir-nuevo {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Responsive design for mobile phones */
+@media (max-width: 600px) {
+  .arriba, .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.625rem;
+  }
+
+  .nav, .user {
+    margin: 0;
+  }
+
+  .logo img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .user img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .nav {
+    font-size: 0.875rem;
+  }
+
+  .submenu li {
+    padding: 0.625rem;
+  }
+
+  .servicio {
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .servicios {
+    width: 100%;
+  }
+
+  .subir-nuevo {
+    width: 100%;
+    padding: 0.875rem;
+  }
+
+  footer {
+    padding: 0.625rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
