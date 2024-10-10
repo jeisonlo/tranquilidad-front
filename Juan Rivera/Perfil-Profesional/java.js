@@ -1,3 +1,14 @@
+const menuIcon = document.querySelector('.menu-icon');
+  const navbar = document.querySelector('header');
+
+  // Añadir un event listener para abrir/cerrar el menú
+  menuIcon.addEventListener('click', () => {
+    navbar.classList.toggle('menu-open');
+  });
+
+
+
+
 // Funcion que aplica las animaciones de las habilidades 
 function efectoHabilidades(){
     var skills = document.getElementById("skills");
@@ -64,3 +75,5 @@ document.getElementById("formActualizar").onsubmit = function(event) {
     alert("Información actualizada exitosamente");
     modal.style.display = "none";
 }
+
+

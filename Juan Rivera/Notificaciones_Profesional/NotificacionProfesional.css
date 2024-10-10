@@ -1,34 +1,80 @@
-/* Barra de navegacion y footer */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Barra de navegación y otros estilos */
 html, body {
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina relleno por defecto */
   height: 100%;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-style: normal; /* Esto asegura que no esté en cursiva */
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
+  min-height: 100vh; /* Asegúrate de que el cuerpo tenga al menos el 100% de la altura de la ventana */
 }
 
 .navbar {
   background-color: #fff;
+  
   padding: 1rem;
   display: flex;
   align-items: center;
   border-bottom: 0.0625rem solid #ddd;
-  width: 100%;
+  width: 98%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+}
+
+
+.dropdown-menu {
+  display: none;
+  background-color: #fff;
+  position: fixed;
+  top: 5rem;
+  right: 1.25rem;
+  width: 12.5rem;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.3125rem;
+  z-index: 1000;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 0.9375rem 1.25rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu ul li a {
+  text-decoration: none;
+  color: #59009A;
+}
+
+.dropdown-menu ul li:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #59009A;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -43,10 +89,10 @@ body {
 }
 
 .logo span {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Roboto', sans-serif;
   color: #59009A;
-  font-style: italic;
-  font-size: 2rem;
+  font-style: normal;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
@@ -70,7 +116,7 @@ body {
   border-radius: 0.3125rem;
   box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
   display: none;
-  top: 100%; 
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
@@ -106,7 +152,7 @@ body {
 .user-info {
   display: flex;
   align-items: center;
-  margin: 0rem;
+  margin: 0;
   font-size: 1.0625rem;
 }
 
@@ -119,59 +165,157 @@ body {
 .body {
   padding: 5rem 1.25rem 1.25rem 1.25rem;
   flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
-.footer {
-  background-color: #59009A;
-  color: #fff;
-  padding: 0.625rem 1.25rem;
+/* Agregar estilos para el footer */
+.footer-container {
   display: flex;
+  padding: 0;
   justify-content: space-between;
-  position: relative;
+  align-items: center;
   width: 100%;
-  bottom: 0;
-  left: 0;
-  margin-top: auto;
+  margin: 0; /* Asegúrate de que no haya margen que cause espacios en blanco */
 }
 
-.footer-links {
+.contact-item {
   display: flex;
-  align-items: center;
-}
-
-.contactanos,
-.canales-atencion,
-.social-media {
-  display: flex;
-  align-items: center;
   flex-direction: column;
-  margin-right: 0rem; /* Espacio entre las secciones */
-  margin-left: 0rem; /* Ajuste para acercar a la izquierda */
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  text-align: center;
+  max-width: 500px;
 }
 
-.contactanos span,
-.canales-atencion span,
-.social-media span {
-  margin-right: 0.625rem;
-  margin-bottom: 0.625rem;
+.contact-item span {
+  margin-bottom: 5px;
 }
 
-.imagenes-container {
+.iconos {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
-.imagen-footer {
-  margin-right: 0.625rem;
-  width: 1.75rem;
+.iconos a {
+  margin: 0 10px;
 }
 
-.texto-footer {
-  text-align: right;
-  align-items: center;
-  transform: translate(0%, 1.875rem);
+.iconos img {
+  width: 24px;
+  height: 24px;
+}
+
+.quienes-somos {
+  align-self: center;
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+footer {
+  background-color: #59009A;
+  color: #ffffff;
+  padding: 1em;
+  text-align: center;
+  margin-top: auto; /* Esto asegura que el footer esté al final */
+  position: relative; /* Para que no haya problemas con el posicionamiento */
+}
+
+
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .logo span {
+    font-size: 1.5rem;
+  }
+
+  .submenu ul li {
+    padding: 10px 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .servicios, .user-info {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    margin-left: auto; /* Ajusta este valor para moverlo más a la izquierda */
+    margin-right: 10px; /* Ajusta este valor negativo para moverlo a la izquierda */
+    font-size: 2rem;
+    color: #59009A;
+  }
+
+  .menu-open .dropdown-menu {
+    display: block;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links,
+  .contactanos,
+  .canales-atencion,
+  .social-media {
+    margin-bottom: 10px;
+  }
+
+  .imagenes-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 5px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+  }
+
+  .user-info {
+    font-size: 14px;
+  }
+
+  .servicios {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .grid-item {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  /* Ocultar texto en el footer */
+  .footer-container span {
+    display: none; /* Oculta el texto */
+  }
+  
+  /* Asegurarte de que los iconos se muestren */
+  .iconos {
+    display: flex;
+    justify-content: center; /* Centra los iconos */
+  }
+
+  .iconos a {
+    margin: 0 10px; /* Ajusta el margen entre iconos */
+  }
 }
 
 /* Contenido del body */
@@ -272,77 +416,3 @@ td {
   background-color: #f0f0f0;
 }
 
-@media (min-width: 1024px) {
-  .navbar {
-    flex-direction: row;
-  }
-  .logo img {
-    width: 4rem;
-    height: 4rem;
-  }
-  .servicios {
-    margin-left: auto;
-  }
-}
-
-/* Estilos para tablets (pantallas medianas) */
-@media (max-width: 1024px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .search-bar input {
-    width: 80%;
-  }
-  .search-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .main-content {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-  }
-  .content {
-    width: 100%;
-  }
-}
-
-/* Estilos para móviles (pantallas pequeñas) */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem;
-  }
-  .logo img {
-    width: 3rem;
-    height: 3rem;
-  }
-  .logo span {
-    font-size: 1.5rem;
-  }
-  .user-info span {
-    font-size: 0.875rem;
-  }
-  .servicios {
-    font-size: 0.875rem;
-  }
-  .submenu li {
-    padding: 0.5rem 1rem;
-  }
-  .search-bar input {
-    width: 90%;
-  }
-  .footer {
-    flex-direction: column;
-    text-align: center;
-  }
-  .imagenes-container {
-    flex-direction: column;
-  }
-  .texto-footer {
-    transform: none;
-    text-align: center;
-    margin-top: 1rem;
-  }
-}
